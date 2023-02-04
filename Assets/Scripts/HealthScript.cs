@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthScript : MonoBehaviour
+public abstract class HealthScript : MonoBehaviour
 {
     // Max health of the object
     [SerializeField] float maxHealth;
@@ -20,7 +20,5 @@ public class HealthScript : MonoBehaviour
         }
     }
 
-    private void Die() {
-        Destroy(gameObject);
-    }
+    public abstract void Die();
 }
