@@ -10,6 +10,6 @@ public class Spike : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log(collision);
         HealthScript healthHandler = collision.transform.GetComponent<HealthScript>();
-        healthHandler.Damage(10);
+        healthHandler.Damage(damageAm);
     }
 }
