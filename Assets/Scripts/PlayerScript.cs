@@ -28,6 +28,7 @@ public class PlayerScript : MonoBehaviour
     private void jump()
     {
         if (!jumping) {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             jumping = true;
         }
