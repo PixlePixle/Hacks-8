@@ -2413,7 +2413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d5a65d6dd0168429845955764055da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   jumpForce: 12
   animator: {fileID: 591085281}
   sideScrollSpeed: 5
