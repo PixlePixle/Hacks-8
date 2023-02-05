@@ -8,10 +8,17 @@ public class PlayerScript : MonoBehaviour
     float speed = 5f;
     [SerializeField]
     float jumpForce = 3f;
+    [SerializeField]
+    Animator animator;
     Controls controls;
     Vector2 move = Vector2.zero;
+    [SerializeField]
+    float sideScrollSpeed = 0f;
     Rigidbody2D rb;
     bool jumping = true;
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
+    Camera cam;
 
     private void Awake()
     { 
@@ -46,7 +53,7 @@ public class PlayerScript : MonoBehaviour
             rb.AddForce(new Vector2(move.x * speed, 0));
         }*/
 
-        rb.velocity = new Vector2(move.x * speed, rb.velocity.y);
+        rb.velocity = new Vector2((move.x * speed) + sideScrollSpeed, rb.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -59,5 +66,26 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         move = controls.KBM.Movement.ReadValue<Vector2>();
+
+        if (rb.velocity.x > 0)
+            spriteRenderer.flipX = false;
+        if (rb.velocity.x < 0)
+            spriteRenderer.flipX = true;
+        if(jumping)
+        {
+            animator.SetBool("IsJumping", true);
+        } else
+        {
+            animator.SetBool("IsJumping", false);
+        }
+
+        if (Mathf.Abs(rb.velocity.x) > 0.2 && !jumping)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
     }
 }
