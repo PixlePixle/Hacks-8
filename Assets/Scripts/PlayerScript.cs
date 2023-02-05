@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -59,7 +60,15 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.layer == 6) {
             jumping = false;
+        } else if (collision.gameObject.layer == 7)
+        {
+            doWin();
         }
+    }
+
+    public void doWin()
+    {
+        SceneManager.LoadScene("win");
     }
 
     // Update is called once per frame

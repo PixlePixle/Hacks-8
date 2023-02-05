@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1784712597795486321}
   - component: {fileID: 3534881435824941189}
   - component: {fileID: 6170330284045833432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,8 @@ EdgeCollider2D:
   - {x: 0.21357998, y: 0.50594616}
   - {x: 0.78776866, y: 0.22129378}
   - {x: 1.6099261, y: 0.22115837}
-  - {x: 1.6120936, y: -0.46081033}
+  - {x: 1.6087298, y: -0.4956946}
+  - {x: -1.5488738, y: -0.49759418}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
